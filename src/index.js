@@ -32,7 +32,7 @@ const setupOrm = async () => {
 
     const sequelize = await setupOrm();
 
-    connection.end();
+    await sequelize.close();
   } catch (error) {
     console.error(error);
   }
