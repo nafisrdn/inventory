@@ -23,10 +23,10 @@ const authenticateDb = async () => {
     await authenticateDb();
 
     await recreateTable();
+    console.log("Table recreated.");
 
     const insertedOsInfos = await bulkCreate(osInfos);
-
-    console.log(insertedOsInfos);
+    console.log("OS Infos Inserted");
 
     await sequelize.close();
   } catch (error) {

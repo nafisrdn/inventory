@@ -16,6 +16,8 @@ const convertTextToJson = (text) => {
     json[transformedKey] =
       transformedKey === "outlet_code" || transformedKey === "ram_gb"
         ? Number(value.trim())
+        : value.trim() === ""
+        ? null
         : value.trim();
   }
 

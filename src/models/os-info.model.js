@@ -11,43 +11,43 @@ const OsInfo = sequelize.define(
     },
     outlet_code: {
       type: DataTypes.BIGINT,
-      allowNull: false,
+      allowNull: true,
     },
     username: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     hostname: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     ip_address: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     ram_gb: {
       type: DataTypes.TINYINT,
-      allowNull: false,
+      allowNull: true,
     },
     cpu: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     disk: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     os_version: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     java_version: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     jdk_version: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     jre_version: {
       type: DataTypes.STRING,
@@ -63,7 +63,7 @@ const OsInfo = sequelize.define(
     },
     serial_number: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {
