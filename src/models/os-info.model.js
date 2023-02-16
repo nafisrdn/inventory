@@ -1,5 +1,5 @@
-const { Sequelize, DataTypes } = require("sequelize");
-const sequelize = new Sequelize("sqlite::memory:");
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("../configs/db.config");
 
 const OsInfo = sequelize.define(
   "OsInfo",
@@ -9,7 +9,7 @@ const OsInfo = sequelize.define(
       primaryKey: true,
       autoIncrement: true,
     },
-    outletCode: {
+    outlet_code: {
       type: DataTypes.BIGINT,
       allowNull: false,
     },
@@ -21,11 +21,11 @@ const OsInfo = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    ipAddress: {
+    ip_address: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    ramGb: {
+    ram_gb: {
       type: DataTypes.TINYINT,
       allowNull: false,
     },
@@ -37,31 +37,31 @@ const OsInfo = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    osVersion: {
+    os_version: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    javaVersion: {
+    java_version: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    jdkVersion: {
+    jdk_version: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    jreVersion: {
+    jre_version: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    browserVersion: {
+    browser_version: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    googleChromeVersion: {
+    google_chrome_version: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    serialNumber: {
+    serial_number: {
       type: DataTypes.STRING,
       allowNull: false,
     },
