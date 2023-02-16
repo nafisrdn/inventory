@@ -3,9 +3,9 @@ const path = require("path");
 
 const { sequelize } = require("./configs/db.config");
 const {
-  createOsInfo,
   recreateTable,
   bulkCreate,
+  saveToFile,
 } = require("./services/os-info.service");
 const { convertTextFilesToJson } = require("./utils/json-converter.util");
 
@@ -25,8 +25,12 @@ const authenticateDb = async () => {
     await recreateTable();
     console.log("Table recreated.");
 
-    const insertedOsInfos = await bulkCreate(osInfos);
+    await bulkCreate(osInfos);
     console.log("OS Infos Inserted");
+
+    const dumpFile = path.join(__dirname, "../../output/dump.sql");
+
+    await saveToFile(dumpFile);
 
     await sequelize.close();
   } catch (error) {
