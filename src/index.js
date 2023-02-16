@@ -28,7 +28,7 @@ const authenticateDb = async () => {
     await bulkCreate(osInfos);
     console.log("OS Infos Inserted");
 
-    const dumpFile = path.join(__dirname, "../../output/dump.sql");
+    const dumpFile = path.join(__dirname, "../output/dump.sql");
 
     await saveToFile(dumpFile);
 
