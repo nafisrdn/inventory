@@ -13,7 +13,10 @@ const convertTextToJson = (text) => {
       .replace(/[()]/g, "")
       .toLowerCase();
 
-    json[transformedKey] = value.trim();
+    json[transformedKey] =
+      transformedKey === "outlet_code" || transformedKey === "ram_gb"
+        ? Number(value.trim())
+        : value.trim();
   }
 
   return json;
